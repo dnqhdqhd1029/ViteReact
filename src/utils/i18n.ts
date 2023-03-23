@@ -10,7 +10,7 @@ import ja from '@/locales/ja-translation.json';
 import ko from '@/locales/ko-translation.json';
 import cn from '@/locales/cn-translation.json';
 
-const locale = 'ko';
+const locale = 'en';
 
 console.log('locale', locale);
 

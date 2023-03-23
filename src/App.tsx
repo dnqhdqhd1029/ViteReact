@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
-import './App.css';
 import TestApp from '@/pages/test/TestApp';
 import { useTranslation } from 'react-i18next';
-import '@/utils/i18n';
 import Config from '@/Config';
+import Language from '@/utils/Language';
 function App() {
   const { t } = useTranslation();
   const [count, setCount] = useState(0);
 
   return (
     <div className="App">
+      <Language />
       <h1>{t('타이틀')}</h1>
       <p>{t('보조타이틀')}</p>
       <div>
