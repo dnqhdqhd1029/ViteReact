@@ -24,7 +24,7 @@ const LocalStorageUtils = {
    * @param name {string}
    * @param value {null|any}
    */
-  setItem(name: string, value: any) {
+  setItem(name: string, value: string) {
     els.setItem(name, value);
   },
   /**

@@ -5,6 +5,12 @@ import CommonUtils from '@/utils/CommonUtils';
 
 const API = axios.create({
   baseURL: Config.getBaseUrl(),
+  headers: {
+    'Cache-Control': 'no-cache',
+  },
+  timeout: 30000,
+  // crossDomain 대신 사용
+  withCredentials: true,
 });
 
 export const useAxiosInterceptor = () => {
