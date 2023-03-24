@@ -1,11 +1,12 @@
 import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom';
 import '@/styles.scss';
 import '@/utils/i18n';
 import { useAxiosInterceptor } from '@/API';
 
 import Home from '@/pages/Home';
 import TestApp from '@/pages/test/TestApp';
+import NotFound from '@/pages/NotFound';
 
 const router = createBrowserRouter([
   {
@@ -14,8 +15,13 @@ const router = createBrowserRouter([
   },
   {
     path: '/test',
-    element: <TestApp />,
+    element: <Route element={<TestApp />} />,
   },
+
+  {
+    path: '*',
+    element: <NotFound />
+  }
 ]);
 
 function App() {

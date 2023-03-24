@@ -3,8 +3,6 @@ import React from 'react';
 import { observer } from 'mobx-react';
 import testStore from '@/pages/test/TestStore';
 
-import CommonUtils from '@/utils/CommonUtils';
-
 const TestApp = () => {
   const { count, increment, decrement, fetcha, fetchb } = testStore;
 
