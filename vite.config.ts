@@ -8,7 +8,9 @@ import { viteStaticCopy } from 'vite-plugin-static-copy';
 export default defineConfig({
   plugins: [
     react(),
-    eslintPlugin(),
+    eslintPlugin({
+      cache: false,
+    }),
     tsconfigPaths(),
     viteStaticCopy({
       targets: [
@@ -24,5 +26,8 @@ export default defineConfig({
   },
   build: {
     minify: true,
+    rollupOptions: {
+      treeshake: false,
+    },
   },
 });

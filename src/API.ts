@@ -30,10 +30,10 @@ export const useAxiosInterceptor = () => {
     (response) => response,
     async (error) => {
       const originalRequest = error.config;
-      console.log('error.response.status ', error.response.status);
-      if (error.response.status === 401 && !originalRequest._retry) {
+      console.log('error.response.status ', error.response?.status);
+      if (error.response?.status === 401 && !originalRequest._retry) {
         alert('401');
-      } else if (error.response.status === 403) {
+      } else if (error.response?.status === 403) {
         alert('403 - Forbidden');
       }
 
