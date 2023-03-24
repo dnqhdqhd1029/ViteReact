@@ -1,5 +1,5 @@
 import { makeObservable, observable, action } from 'mobx';
-import axios from 'axios';
+import API from '@/API';
 
 class TestStore {
   count = 1;
@@ -23,21 +23,19 @@ class TestStore {
   };
 
   fetcha = () => {
-    axios.get('http://localhost:4000/dev/v1/mhub/e/user').then((res) => {
+    API.get('http://localhost:4000/dev/v1/mhub/e/user').then((res) => {
       console.log('res', res);
     });
   };
 
   fetchb = () => {
-    axios
-      .get('http://localhost:4000/dev/v1/mhub/e/user', {
-        headers: {
-          'x-api-key': '1234',
-        },
-      })
-      .then((res) => {
-        console.log('res', res);
-      });
+    API.get('http://localhost:4000/dev/v1/mhub/e/user', {
+      headers: {
+        'x-api-key': '1234',
+      },
+    }).then((res) => {
+      console.log('res', res);
+    });
   };
 }
 export default new TestStore();

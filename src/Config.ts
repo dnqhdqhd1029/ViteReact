@@ -13,6 +13,10 @@ class Config {
   public static isProd(): boolean {
     return import.meta.env.MODE === 'production';
   }
+
+  public static getXApiKey(): string {
+    return import.meta.env.VITE_APP_X_API_KEY;
+  }
 }
 
 export default Config;
