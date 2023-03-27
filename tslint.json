@@ -21,7 +21,8 @@
       true,
       200
     ],
-    "no-console": false
+    "no-console": false,
+    "no-shadowed-variable": false
   },
   "exclude": [
     "node_modules/**"

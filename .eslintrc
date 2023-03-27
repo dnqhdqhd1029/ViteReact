@@ -8,7 +8,6 @@
   "plugins": ["@typescript-eslint"],
   "rules": {
     "@typescript-eslint/no-unused-vars": "off",
-    "no-console": "warn",
-    "no-shadowed-variable": "off"
+    "no-console": "warn"
   }
 }

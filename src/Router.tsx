@@ -42,7 +42,6 @@ const routes = (): MapRouterProps[] => [
   },
 ];
 
-// tslint:disable-next-line:no-shadowed-variable
 const mapRoutes = (routes: any): MapRouterProps[] => {
   return routes.map(({ path, element, children }: any) => {
     return {
