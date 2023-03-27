@@ -3,13 +3,14 @@ import { makeObservable, observable, action } from 'mobx';
 import API from '@/API';
 
 class TestStore {
-  count = 1;
+  count = 0;
 
   constructor() {
     makeObservable(this, {
       count: observable,
       decrement: action,
       increment: action,
+      reset: action,
       fetcha: action,
       fetchb: action,
     });
@@ -21,6 +22,12 @@ class TestStore {
 
   decrement = () => {
     this.count--;
+  };
+
+  reset = () => {
+    this.count = 0;
+
+    console.log('count reset');
   };
 
   fetcha = () => {
