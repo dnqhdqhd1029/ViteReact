@@ -1,3 +1,4 @@
+import { Component } from 'react';
 import { makeObservable, observable, action } from 'mobx';
 import API from '@/API';
 
@@ -7,8 +8,8 @@ class TestStore {
   constructor() {
     makeObservable(this, {
       count: observable,
-      increment: action,
       decrement: action,
+      increment: action,
       fetcha: action,
       fetchb: action,
     });
@@ -38,4 +39,5 @@ class TestStore {
     });
   };
 }
+
 export default new TestStore();

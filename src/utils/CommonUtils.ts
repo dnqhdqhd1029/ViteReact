@@ -17,6 +17,16 @@ class CommonUtils {
     // 나머지 경우는 false를 반환합니다.
     return false;
   }
+
+  public static isJSON(value: any): boolean {
+    try {
+      const json = typeof value !== 'string' ? JSON.stringify(value) : value;
+      JSON.parse(json);
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
 }
 
 export default CommonUtils;
