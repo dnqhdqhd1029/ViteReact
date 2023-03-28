@@ -34,7 +34,7 @@ const routes = (): MapRouterProps[] => [
   },
   {
     path: '/test2',
-    element: <TestApp />,
+    element: <TestApp2 />,
   },
   {
     path: '*',

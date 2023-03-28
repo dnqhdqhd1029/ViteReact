@@ -6,6 +6,10 @@ class Config {
     return import.meta.env.MODE;
   }
 
+  public static isMock(): boolean {
+    return import.meta.env.MODE === 'mock';
+  }
+
   public static isDev(): boolean {
     return import.meta.env.MODE === 'development';
   }

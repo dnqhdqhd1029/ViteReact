@@ -46,11 +46,11 @@ $ touch tslint.json
 ```bash
 # prettier 설정
 $ yarn add prettier -D
-$ touch .prettierrc
+$ touch .prettierrc.js
 ```
 
 ```javascript
-// .prettierrc
+// .prettierrc.js
 {
   "printWidth": 200,
   "semi": true,
@@ -132,4 +132,48 @@ export default defineConfig({
     minify: true,
   },
 });
+```
+
+```bash
+# json-server 설치
+$ npm install json-server -g
+
+# routes.json, db.json 생성
+$ touch routes.json
+{
+  "/v1/users": "/users",
+  "/v1/users/:id": "/users/:id"
+}
+
+$ touch db.json
+{
+  "users": []
+}
+
+# json-server 실행
+$ json-server --routes routes.json --watch db.json --port 5001
+
+
+# axios 테스트
+# json-server get test
+const res = await axios.get('http://localhost:5001/v1/users');
+console.log(res.data);
+
+#json-server post test
+const res = await axios.post('http://localhost:5001/v1/users', {
+  name: 'test',
+  age: 20,
+});
+console.log(res.data);
+
+#json-server put test
+const res = await axios.put('http://localhost:5001/v1/users/1', {
+  name: 'test',
+  age: 20,
+});
+console.log(res.data);
+
+#json-server delete test
+const res = await axios.delete('http://localhost:5001/v1/users/1');
+console.log(res.data);
 ```

@@ -2,9 +2,11 @@ import React, { useEffect } from 'react';
 import { observer } from 'mobx-react';
 import testStore from '@/pages/test/TestStore';
 import { useStore } from '@/provider/StoreProvider';
+import { useNavigate } from 'react-router-dom';
+import Header from '@/components/wrappers/Header';
 
 const TestApp = () => {
-  const { count, increment, decrement, reset, fetcha, fetchb } = testStore;
+  const navigate = useNavigate();
   const { globalStore } = useStore();
 
   useEffect(() => {
@@ -12,18 +14,60 @@ const TestApp = () => {
 
     return () => {
       console.log('unmounted');
-      //reset();
     };
   }, []);
   return (
     <div className="header1">
-      <h1>Count: {count}</h1>
-      <button onClick={increment}>+</button>
-      <button onClick={decrement}>-</button>
-      <button onClick={fetcha}>fetcha</button>
-      <button onClick={fetchb}>fetchb</button>
+      <Header />
+      <button
+        onClick={() => {
+          navigate(-1);
+        }}
+      >
+        뒤로 가기
+      </button>
+      <button
+        onClick={() => {
+          testStore.getTest();
+        }}
+      >
+        getTest
+      </button>
+      <button
+        onClick={() => {
+          testStore.postTest({
+            name: 'test',
+            age: 10,
+          });
+        }}
+      >
+        postTest
+      </button>
+      <button
+        onClick={() => {
+          testStore.putTest({
+            name: 'test2',
+            age: 20,
+            id: 1,
+          });
+        }}
+      >
+        putTest
+      </button>
+      <button
+        onClick={() => {
+          testStore.deleteTest({
+            id: testStore.json[0].id,
+          });
+        }}
+      >
+        deleteTest
+      </button>
       <button onClick={() => globalStore.setIsLoading(true)}>{`${globalStore.isLoading}`}</button>
       <button onClick={() => globalStore.setIsLoading(false)}>{`${globalStore.isLoading}`}</button>
+      <div>
+        JSON: <pre>{JSON.stringify(testStore.json, null, 2)}</pre>
+      </div>
     </div>
   );
 };

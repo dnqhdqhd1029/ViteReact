@@ -4,7 +4,6 @@ import Session from '@/Session';
 import CommonUtils from '@/utils/CommonUtils';
 import { useState } from 'react';
 
-
 let isRefreshing = false;
 type RefreshSubscriber = (accessToken: string) => void;
 let refreshSubscribers: RefreshSubscriber[] = [];
@@ -19,8 +18,7 @@ const onTokenRefreshed = (accessToken: string): void => {
   subscribers.forEach((callback: RefreshSubscriber) => callback(accessToken));
 };
 
-
-const API = axios.create({
+const instance = axios.create({
   baseURL: Config.getBaseUrl(),
   headers: {
     'Cache-Control': 'no-cache',
@@ -31,19 +29,17 @@ const API = axios.create({
 });
 
 const requestRefreshToken = async (memberNumber: string, refreshToken: string): Promise<any> => {
-  const response = await API.post('/api/v1/auth/refresh',
-    {
-      params: {
-        memberNumber,
-        refreshToken
-      }
-    }
-  );
+  const response = await instance.post('/api/v1/auth/refresh', {
+    params: {
+      memberNumber,
+      refreshToken,
+    },
+  });
   return response;
 };
 
 export const useAxiosInterceptor = () => {
-  API.interceptors.request.use((config) => {
+  instance.interceptors.request.use((config) => {
     if (!CommonUtils.isEmpty(Session.getAccessToken())) {
       config.headers.Authorization = Session.getAccessToken();
     }
@@ -55,10 +51,9 @@ export const useAxiosInterceptor = () => {
     return config;
   });
 
-  API.interceptors.response.use(
+  instance.interceptors.response.use(
     (response) => response,
     async (error) => {
-
       const { config } = error;
       const message = String(error?.message || '');
       const statusCode = String(error?.response?.status || '');
@@ -71,10 +66,10 @@ export const useAxiosInterceptor = () => {
         const memberNumber = '0';
         const refreshToken = Session.getRefreshToken();
 
-        const retryOriginalRequest = new Promise(resolve => {
-          addRefreshSubscriber(accessToken => {
+        const retryOriginalRequest = new Promise((resolve) => {
+          addRefreshSubscriber((accessToken) => {
             originalConfig.headers.Authorization = accessToken;
-            resolve(API(originalConfig));
+            resolve(instance(originalConfig));
           });
         });
 
@@ -88,7 +83,7 @@ export const useAxiosInterceptor = () => {
 
           // todo: bridge 처리
 
-          API.defaults.headers.common.Authorization = `Bearer ${data.token}`;
+          instance.defaults.headers.common.Authorization = `Bearer ${data.token}`;
           onTokenRefreshed(data.token);
         }
         return retryOriginalRequest;
@@ -98,6 +93,25 @@ export const useAxiosInterceptor = () => {
   );
 
   console.log('API initialized');
+};
+
+const API = {
+  get: async (url: string, config?: any) => {
+    const response = await instance.get(url, config);
+    return response;
+  },
+  post: async (url: string, data?: any, config?: any) => {
+    const response = await instance.post(url, data, config);
+    return response;
+  },
+  put: async (url: string, data?: any, config?: any) => {
+    const response = await instance.put(url, data, config);
+    return response;
+  },
+  delete: async (url: string, config?: any) => {
+    const response = await instance.delete(url, config);
+    return response;
+  },
 };
 
 export default API;
