@@ -1,6 +1,6 @@
 class CommonUtils {
   /* eslint-disable @typescript-eslint/no-explicit-any */
-  public static isEmpty(value: any): boolean {
+  public isEmpty(value: any): boolean {
     const type = typeof value;
     // null
     if (type === 'undefined' || value == null) {
@@ -18,7 +18,7 @@ class CommonUtils {
     return false;
   }
 
-  public static isJSON(value: any): boolean {
+  public isJSON(value: any): boolean {
     try {
       const json = typeof value !== 'string' ? JSON.stringify(value) : value;
       JSON.parse(json);
@@ -29,4 +29,4 @@ class CommonUtils {
   }
 }
 
-export default CommonUtils;
+export default new CommonUtils();

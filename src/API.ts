@@ -103,23 +103,23 @@ export const useAxiosInterceptor = () => {
   console.log('API initialized');
 };
 
-const API = {
-  get: async (url: string, config?: any) => {
+class API {
+  public get = async (url: string, config?: any) => {
     const response = await instance.get(url, config);
     return response;
-  },
-  post: async (url: string, data?: any, config?: any) => {
+  }
+  public post = async (url: string, data?: any, config?: any) => {
     const response = await instance.post(url, data, config);
     return response;
-  },
-  put: async (url: string, data?: any, config?: any) => {
+  }
+  public put = async (url: string, data?: any, config?: any) => {
     const response = await instance.put(url, data, config);
     return response;
-  },
-  delete: async (url: string, config?: any) => {
+  }
+  public delete = async (url: string, config?: any) => {
     const response = await instance.delete(url, config);
     return response;
-  },
-};
+  }
+}
 
-export default API;
+export default new API();

@@ -1,26 +1,26 @@
 class Config {
-  public static getBaseUrl(): string {
+  public getBaseUrl(): string {
     return import.meta.env.VITE_APP_BASE_URL;
   }
-  public static getMode(): string {
+  public getMode(): string {
     return import.meta.env.MODE;
   }
 
-  public static isMock(): boolean {
+  public isMock(): boolean {
     return import.meta.env.MODE === 'mock';
   }
 
-  public static isDev(): boolean {
+  public isDev(): boolean {
     return import.meta.env.MODE === 'development';
   }
 
-  public static isProd(): boolean {
+  public isProd(): boolean {
     return import.meta.env.MODE === 'production';
   }
 
-  public static getXApiKey(): string {
+  public getXApiKey(): string {
     return import.meta.env.VITE_APP_X_API_KEY;
   }
 }
 
-export default Config;
+export default new Config();
