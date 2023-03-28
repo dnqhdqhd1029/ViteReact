@@ -87,6 +87,14 @@ export const useAxiosInterceptor = () => {
           onTokenRefreshed(data.token);
         }
         return retryOriginalRequest;
+      } else if (String(error?.response?.status) === '403') {
+        console.log('Axios Response Error', { statusCode }, { message }, config, error);
+      } else if (String(error?.response?.status) === '404') {
+        console.log('Axios Response Error', { statusCode }, { message }, config, error);
+      } else if (String(error?.response?.status) === '500') {
+        console.log('Axios Response Error', { statusCode }, { message }, config, error);
+      } else if (String(error?.response?.status) === '503') {
+        console.log('Axios Response Error', { statusCode }, { message }, config, error);
       }
       return Promise.reject(error);
     }

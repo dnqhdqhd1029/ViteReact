@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "mock": "vite --mode=mock",
+    "jsonserver": "json-server --routes routes.json --watch db.json --port 5001",
     "dev": "vite",
     "devp": "vite --mode=production",
     "serve": "serve -s dist",
