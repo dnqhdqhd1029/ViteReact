@@ -1,0 +1,326 @@
+/*input*/
+
+input[type="password"],
+input[type="tel"],
+input[type="serach"],
+input[type="number"],
+input[type="text"] {
+  display: block;
+  width: -webkit-fill-available;
+  height: $heightMd;
+  border: 1px solid $info;
+  color: $black;
+  padding: 0 10px;
+
+}
+input.inline{
+  display: inline-block;
+  width: auto;
+}
+
+input[type="password"]:focus,
+input[type="tel"]:focus,
+input[type="serach"]:focus,
+input[type="number"]:focus,
+input[type="text"]:focus,
+input.focus{
+  border: 1px solid $primary;
+  color: $black;
+  outline: 0;
+  box-shadow: none;
+}
+
+input.error{
+  border: 1px solid $danger;
+  color: $black;
+  outline: 0;
+  box-shadow: none;
+}
+
+input[type="password"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="serach"]::placeholder,
+input[type="number"]::placeholder,
+input[type="text"]::placeholder {
+  color: $info;
+  letter-spacing: -1px;
+}
+
+input[type="password"]:disabled,
+input[type="tel"]:disabled,
+input[type="serach"]:disabled,
+input[type="number"]:disabled,
+input[type="text"]:disabled {
+  border: 1px solid $info;
+  background: $info;
+  color: $lightGray;
+}
+
+input[type="password"]:disabled::placeholder,
+input[type="tel"]:disabled::placeholder,
+input[type="serach"]:disabled::placeholder,
+input[type="number"]:disabled::placeholder,
+input[type="text"]:disabled::placeholder {
+  color: $lightGray;
+}
+
+/*textarea*/
+
+textarea {
+  border: 1px solid $info;
+  color: $black;
+  font-size: inherit;
+  width: 100%;
+  padding: 10px;
+}
+
+textarea:focus {
+  border: 1px solid $primary;
+  color: $black;
+  outline: 0;
+  box-shadow: none;
+}
+
+textarea::placeholder {
+  color: $info;
+  opacity: 1;
+}
+
+/*checkbox*/
+
+label input[type="checkbox"] {
+  display: none;
+}
+
+label input[type="checkbox"] + span {
+  background-image: url(../images/svg/icon-checkbox-off.svg);
+  @include iconLeft;
+  background-size: $iconMd - 2px;
+  min-width: $iconMd;
+  height: $iconMd;
+  line-height: $iconMd;
+  font-size: inherit;
+  padding-left: $iconMd + 5px;
+}
+
+label input[type="checkbox"]:checked + span {
+  background-image: url(../images/svg/icon-checkbox-on.svg);
+  @include iconLeft;
+}
+
+label input[type="checkbox"]:disabled + span {
+  background-image: url(../images/svg/icon-checkbox-dim.svg);
+  @include iconLeft;
+}
+
+label input[type="checkbox"] + span.none {
+  font-size: 0;
+  width: $iconMd;
+  height: $iconMd;
+  text-indent: -99999px;
+  padding-left: 0;
+}
+
+label input + span{
+  margin-right: 10px;
+
+}
+/*라디오버튼*/
+label input[type="radio"] {
+  display: none;
+}
+
+label input[type="radio"] + span {
+  background-image: url(../images/svg/icon-radio-off.svg);
+  @include iconLeft;
+  background-size: $iconMd;
+  min-width: $iconMd;
+  height: $iconMd;
+  line-height: $iconMd;
+  font-size: inherit;
+  padding-left: $iconMd + 5px;
+}
+
+label input[type="radio"]:checked + span {
+  background-image: url(../images/svg/icon-radio-on.svg);
+  @include iconLeft;
+}
+
+label input[type="radio"]:disabled + span {
+  background-image: url(../images/svg/icon-radio-dim.svg);
+  @include iconLeft;
+}
+
+label input[type="radio"] + span.none {
+  font-size: 0;
+  width: $iconMd;
+  height: $iconMd;
+  text-indent: -99999px;
+  padding-left: 0;
+}
+
+label input.none{
+  border: none;
+}
+
+
+
+/*토굴 체크박스*/
+
+label.toggle-switch {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+label.toggle-switch input[type="checkbox"] {
+  display: block;
+  appearance: none;
+  position: relative;
+  border-radius: 13px;
+  width: 40px;
+  height: 26px;
+  background-color: $info;
+}
+
+label.toggle-switch input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  top: 1.4px;
+  left: 1.5px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  transform: scale(0.8);
+  background-color: $white;
+  transition: left 250ms linear;
+}
+label.toggle-switch input[type="checkbox"]:checked::before {
+  background-color:  $white;
+  top: 1px;
+  left: 16px;
+}
+
+label.toggle-switch input[type="checkbox"]:checked {
+  background-color: $primary;
+  border-color: tomato;
+}
+
+label.toggle-switch input[type="checkbox"]:disabled {
+  border-color: $info;
+  background-color: $info;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+label.toggle-switch input[type="checkbox"]:disabled:before {
+  background-color: $white;
+}
+
+label.toggle-switch input[type="checkbox"] + span{
+  background-image: none;
+  padding-left: 0;
+  margin: 0 10px 0 5px;
+}
+
+label.toggle-switch input[type="checkbox"]:disabled + span {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/*grade-content 평점*/
+.grade-content{
+  direction: rtl; /* 이모지 순서 반전 */
+  display: inline-block;
+}
+
+.grade-content button,
+.grade-content button.off{
+  margin: 0 5px 0 5px;
+  width: 32px;
+  height: 32px;
+  background-image: url(../images/svg/icon-grade-off.png);
+  @include iconCenter;
+  font-size: 0;
+}
+
+.grade-content button:hover ~ button,
+.grade-content button:hover,
+.grade-content button.on{
+
+  background-image: url(../images/svg/icon-grade-on.png);
+  @include iconCenter;
+}
+
+
+
+
+
+/*select*/
+.select-content {
+  position: relative;
+  display: inline-block;
+}
+.select-pull{
+  display: block;
+}
+
+.select-content:before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  right: 20px;
+  top: 12px;
+  width: 2px;
+  height: 8px;
+  background: $primary;
+  transform: rotate( -45deg );
+  pointer-events: none;
+}
+.select-content:after {
+  content: '';
+  color: #fff;
+  display: inline-block;
+  position: absolute;
+  right: 14px;
+  top: 12px;
+  width: 2px;
+  height:8px;
+  background: $primary;
+  transform: rotate( 45deg );
+  pointer-events: none;
+}
+select {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 32px 0 14px;
+  background: $white;
+  height: $heightXs;
+  line-height:$fontSm ;
+  color: $dark;
+  font-size: $fontSm;
+  border:1px solid $info;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: $radius;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select option[value=""][disabled] {
+  display: none;
+}
+
+select:focus {
+  outline: none;
+}
+
+select.select option {
+  height: 60px;
+  padding: 10px;
+}
+

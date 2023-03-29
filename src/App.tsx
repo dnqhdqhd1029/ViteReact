@@ -1,5 +1,6 @@
 import React from 'react';
-import '@/styles.scss';
+import '@/assets/style/style.scss';
+import '@/assets/styles.scss';
 import '@/utils/i18n';
 import StoreProvider from '@/provider/StoreProvider';
 import Router from '@/Router';
