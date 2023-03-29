@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, useRoutes, useLocation } from 'react-router-dom';
 import Home from '@/pages/Home';
+import Guide from '@/pages/Guide';
 import Layout from '@/layouts/Layout';
 import TestApp from '@/pages/test/TestApp';
 import TestApp2 from '@/pages/test/TestApp2';
@@ -35,6 +36,10 @@ const routes = (): MapRouterProps[] => [
   {
     path: '/test2',
     element: <TestApp2 />,
+  },
+  {
+    path: '/guide',
+    element: <Guide />,
   },
   {
     path: '*',

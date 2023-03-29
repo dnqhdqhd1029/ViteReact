@@ -22,7 +22,9 @@
       200
     ],
     "no-console": false,
-    "no-shadowed-variable": false
+    "no-shadowed-variable": false,
+    "no-trailing-whitespace": false,
+    "quotemark": false
   },
   "exclude": [
     "node_modules/**"

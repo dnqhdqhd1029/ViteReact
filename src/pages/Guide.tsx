@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from "styled-components";
-import icXxl from "@/assets/images/svg/icon-xxl.svg"
+import styled from 'styled-components';
+import icXxl from '@/assets/images/svg/icon-xxl.svg';
 
 const GuideContainer = styled.div`
     .guide-container{
@@ -16,7 +16,7 @@ const GuideContainer = styled.div`
           margin-top: 20px;
           margin-bottom: 20px;
         }
-        
+
         li{
           margin-left: 13px;
           list-style: disc;
@@ -62,23 +62,23 @@ const GuideContainer = styled.div`
         margin: 50px 0 ;
       }
     }
-`
+`;
 const Guide = () => {
     const [clicked, setClicked] = React.useState([false, false, false, false, false]);
-    const handleStarClick = index => {
-        let clickStates = [...clicked];
+    const handleStarClick = (index: number) => {
+        const clickStates = [...clicked];
         for (let i = 1; i < 6; i++) {
             clickStates[i] = i <= index ? true : false;
         }
         setClicked(clickStates);
     };
-    let score = clicked.filter(Boolean).length;
+    const score = clicked.filter(Boolean).length;
 
 
 
     const sendReview = () => {
-        let score = clicked.filter(Boolean).length;
-        console.log("score",score)
+        const score = clicked.filter(Boolean).length;
+        console.log('score', score);
     };
 
     React.useEffect(() => {
@@ -89,14 +89,6 @@ const Guide = () => {
     return (
 
         <GuideContainer>
-            <div>
-                <nav>
-                    <MenuLink to="/layout">[레이아웃]</MenuLink>
-                </nav>
-                <Routes>
-                    <Route path="/layout" element={<Layout />} />
-                </Routes>
-            </div>
 
 
             <div className="guide-container pxy-10">
@@ -199,7 +191,7 @@ const Guide = () => {
                             <button
                                 key={r}
                                 onClick={() => handleStarClick(r)}
-                                className={clicked[r] && 'on'}
+                                className={clicked[r] ? 'on' : ''}
                             >
                                 {r}
                             </button>
