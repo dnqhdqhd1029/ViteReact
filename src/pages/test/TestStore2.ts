@@ -91,4 +91,4 @@ export const useTestStore2 = () => {
   };
 };
 
-export default TestStore2;
+export default new TestStore2();

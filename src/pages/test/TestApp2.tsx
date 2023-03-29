@@ -5,7 +5,7 @@ import testStore2, { useTestStore2 } from '@/pages/test/TestStore2';
 import { useStore } from '@/provider/StoreProvider';
 
 const TestApp2 = () => {
-  const { testStore2 } = useTestStore2();
+  /*const { testStore2 } = useTestStore2();*/
   const { globalStore } = useStore();
 
   return (

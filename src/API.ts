@@ -3,6 +3,7 @@ import Config from '@/Config';
 import Session from '@/Session';
 import CommonUtils from '@/utils/CommonUtils';
 import { useState } from 'react';
+import useConfirm from '@/hooks/useConfirm';
 
 let isRefreshing = false;
 type RefreshSubscriber = (accessToken: string) => void;
@@ -99,11 +100,9 @@ export const useAxiosInterceptor = () => {
       return Promise.reject(error);
     }
   );
-
-  console.log('API initialized');
 };
 
-class API {
+class API  {
   public get = async (url: string, config?: any) => {
     const response = await instance.get(url, config);
     return response;

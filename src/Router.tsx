@@ -59,6 +59,7 @@ const BaseRoute = () => {
   useEffect(() => {
     globalStore.setPreLocation(globalStore.currentLocation);
     globalStore.setCurrentLocation(location.pathname);
+    console.log('location changed', window.location.pathname);
     console.log(`Location changed to ${globalStore.preLocation} ${globalStore.currentLocation}`);
   }, [location]);
 
