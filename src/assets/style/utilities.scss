@@ -1,0 +1,176 @@
+//height Height
+$heightXl :        54px;
+$heightLg :        48px;
+$heightMd :        40px;
+$heightSm :        32px;
+$heightXs :        30px;
+
+
+//input Height
+$inputXl :      $heightXl;
+$inputLg :      $heightLg;
+$inputMd :      $heightMd;
+$inputSm :      $heightSm;
+$inputXs :      $heightXs;
+
+//icon Size
+$iconXxl :      160px;
+$iconXl :       48px;
+$iconLg :       32px;
+$iconMd :       24px;
+$iconSm :       20px;
+$iconXs :       18px;
+
+
+//font Size
+$fontXxl :       30px;
+$fontXl :        22px;
+$fontLg :        20px;
+$fontMd :        14px;
+$fontSm :        12px;
+$fontXs :        10px;
+
+
+//border Round
+$radius :        8px;
+$radius20 :      20px;
+$radius30 :      30px;
+$radius50 :      50%;
+
+
+//color
+$primary:       #0D81EF;
+$success:       #03B77A;
+$warning:       #FCD211;
+$danger:        #F6303B;
+$dark:          #04253E;
+$info :         #E1E1E1;
+
+//font color
+$darkBlack:     #111111;
+$black:         #292929;
+$gray:          #616161;
+$lightGray:     #9E9E9E;
+$light:         #F7F8F9;
+$white:         #FFFFFF;
+
+$theme-colors: (
+  "primary":    $primary,
+  "success":    $success,
+  "warning":    $warning,
+  "danger":     $danger,
+  "dark":       $dark,
+  "info":       $info,
+  "darkBlack":  $darkBlack,
+  "black":      $black,
+  "gray":       $gray,
+  "lightGray":  $lightGray,
+  "light":      $light,
+  "white":      $white
+);
+
+
+
+//font Weight
+$font100 :     100;
+$font200 :     200;
+$font300 :     300;
+$font400 :     400;
+$font500 :     500;
+$font600 :     600;
+$font700 :     700;
+$font800 :     800;
+$font900 :     900;
+
+//자주쓰는 mixin
+
+@mixin fj {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin fs {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+@mixin fe {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+@mixin fc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@mixin ellipsis {
+  display: inline-block;
+  width: 98%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: bottom;
+}
+
+@mixin ellipsisLine {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-height: 120%;
+  height: 100%;
+}
+
+@mixin iconCenter{
+  background-repeat: no-repeat;
+  background-position:center center;
+  background-size: contain;
+}
+@mixin iconLeft{
+  background-repeat: no-repeat;
+  background-position:left center;
+  background-size: contain;
+}
+@mixin iconRight{
+  background-repeat: no-repeat;
+  background-position:right center;
+  background-size: contain;
+}
+
+
+@mixin iconXxl{
+  width: $iconXxl;
+  height:$iconXxl ;
+}
+
+@mixin iconXl{
+  width: $iconXl;
+  height:$iconXl ;
+}
+
+@mixin iconLg{
+  width: $iconLg;
+  height:$iconLg ;
+}
+
+@mixin iconMd{
+  width: $iconMd;
+  height:$iconMd ;
+}
+
+@mixin iconSm{
+  width: $iconSm;
+  height:$iconSm ;
+}
+
+@mixin iconXs{
+  width: $iconXs;
+  height:$iconXs ;
+}

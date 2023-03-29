@@ -1,0 +1,350 @@
+
+.skip {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  background: none;
+  font-size: 3px;
+  color: transparent;
+  line-height: 0;
+}
+
+.text-hide {
+  font-size: 0;
+  text-indent: -99999px;
+}
+.hide {
+  display: none !important;
+}
+.bg-none {
+  background: none;
+}
+
+.none {
+  display: none !important;
+}
+
+.block {
+  display: block !important;
+}
+
+.inline-block {
+  display: inline-block !important;
+}
+
+.flex{
+  display: flex;
+}
+.inline-flex{
+  display: inline-flex;
+}
+
+.text-indent {
+  text-indent: -10000000000000000px;
+  font-size: 0;
+  height: 0;
+}
+
+.relative {
+  position: relative !important;
+}
+
+/* typography */
+.bold-100 {
+  font-weight: 100;
+}
+
+.bold-200 {
+  font-weight: 200;
+}
+
+.bold-300 {
+  font-weight: 300;
+}
+
+.bold-400 {
+  font-weight: 400;
+}
+
+.bold-500 {
+  font-weight: 500;
+}
+
+.bold-600 {
+  font-weight: 600;
+}
+
+.bold-700 {
+  font-weight: 700;
+}
+
+/*text align*/
+
+.tl {
+  text-align: left !important;
+}
+
+.tc {
+  text-align: right !important;
+}
+
+.tr {
+  text-align: center !important;
+}
+
+.vt {
+  vertical-align: top;
+}
+
+.vm {
+  vertical-align: middle;
+}
+
+.vb {
+  vertical-align: bottom;
+}
+
+.text-under {
+  text-decoration: underline;
+}
+
+
+.ellipsis {
+  display: inline-block;
+  width: 98%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: bottom;
+}
+
+.ellipsis-line {
+  @include ellipsisLine;
+}
+
+/*layout align*/
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.fn {
+  float: none;
+}
+
+.clear {
+  clear: both;
+}
+
+/*flex*/
+.flex-j {
+  @include fj;
+}
+
+.flex-s {
+  @include fs;
+}
+
+.flex-c {
+  @include fc;
+}
+
+.flex-e {
+  @include fe;
+}
+
+.align-s {
+  align-items: start !important;
+}
+
+.align-c {
+  align-items: center !important;
+}
+
+.align-e {
+  align-items: end !important;
+}
+
+.flex-column{
+  flex-direction: column;
+}
+
+
+.flex {
+  flex: 1 1 auto;
+}
+
+
+
+/*btn*/
+.btn{
+  box-sizing: border-box;
+  @include fc;
+  height: $heightMd;
+  display: inline-flex;
+  margin: 0 5px;
+  padding: 0 10px;
+
+  &.xl{
+    height: $heightXl;
+
+    &.radius-half{
+      border-radius: $radius30;
+    }
+  }
+  &.lg{
+    height: $heightLg;
+    &.radius-half{
+      border-radius: $radius30;
+    }
+  }
+  &.md{
+    height: $heightMd;
+    &.radius-half{
+      border-radius: $radius30;
+    }
+  }
+  &.sm{
+    height: $heightSm;
+    &.radius-half{
+      border-radius: $radius30;
+    }
+  }
+  &.xs{
+    height: $heightXs;
+    &.radius-half{
+      border-radius: $radius30;
+    }
+  }
+
+  &.fixed{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+  }
+}
+.pull{
+  width: 100% !important;
+}
+
+.half{
+  width: 48% !important;
+}
+
+
+/*border radius*/
+
+.radius {
+  border-radius: $radius;
+}
+
+.radius-circles{
+  border-radius: $radius50;
+}
+
+/*bg*/
+.bg-primary {
+  background-color:$primary ;
+  color: $white;
+}
+.bg-success {
+  background-color:$success ;
+  color: $white;
+}
+.bg-warning {
+  background-color:$warning ;
+  color: $white;
+}
+.bg-danger {
+  background-color:$danger ;
+  color: $white;
+}
+.bg-dark {
+  background-color:$dark ;
+  color: $white;
+}
+.bg-info {
+  background-color:$info ;
+}
+
+/* text */
+.text-primary {
+  color:$primary !important;
+
+}
+.text-success {
+  color:$success !important;;
+}
+.text-warning {
+  color:$warning !important;;
+}
+.text-danger {
+  color:$danger !important;;
+}
+.text-dark {
+  color:$dark !important;;
+
+}
+.text-info {
+  color:$info !important;
+}
+
+.text-darkBlack{
+  color:$darkBlack !important;
+}
+
+.text-black{
+  color:$black !important;
+}
+
+.text-gray{
+  color:$gray !important;
+}
+
+.text-lightGray{
+  color:$lightGray !important;
+}
+
+.text-light{
+  color:$light !important;
+}
+
+.text-white{
+  color:$white !important;
+}
+
+
+/*icon*/
+.ic{
+  @include iconCenter;
+  @include iconMd;
+
+  &.xxl{
+    @include iconXxl;
+  }
+  &.xl{
+    @include iconXl;
+  }
+  &.lg{
+    @include iconLg;
+  }
+  &.md{
+    @include iconMd;
+  }
+  &.sm{
+    @include iconSm;
+  }
+  &.xs{
+    @include iconXs;
+  }
+}
+
+
+

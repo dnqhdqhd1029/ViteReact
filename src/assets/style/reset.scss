@@ -1,0 +1,212 @@
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* reset style */
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+  display: block;
+}
+
+audio, canvas, progress, video, span, em, b, strong, a, label, i, sub {
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+html, body, div, p, h1, h2, h3, h4, h5, h6, dl, dt, dd, ol, ul, li, blockquote, pre, button, fieldset, form, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, iframe, article, aside, canvas, details, embed, figure, figcaption,
+header, footer, menu, nav, section, summary, audio, i, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+img, fieldset {
+  border: none;
+}
+
+figure, figcaption {
+  margin: 0;
+  padding: 0;
+}
+
+
+b{
+  font-weight:500 ;
+}
+strong{
+  font-weight: 700;
+}
+
+em, dfn, cite, address, i {
+  font-style: normal;
+}
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 90%;
+}
+
+sup, sub {
+  position: relative;
+  font-size: 0.9em;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+label {
+  cursor: pointer;
+}
+
+ol, ul, li {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  background: none;
+  font-size: 3px;
+  color: transparent;
+  line-height: 0;
+}
+
+legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  background: none;
+  font-size: 3px;
+  color: transparent;
+  line-height: 0;
+}
+
+hr {
+  visibility: hidden;
+  overflow: hidden;
+  position: absolute;
+  height: 0;
+  width: 0;
+  font-size: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: inherit;
+}
+
+
+button {
+  text-transform: none;
+  vertical-align: middle;
+  background-color: transparent;
+  cursor: pointer;
+  box-sizing: border-box;
+
+}
+
+select {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  text-transform: none;
+  vertical-align: middle;
+}
+
+button:focus,
+textarea:focus {
+  outline: none;
+}
+
+/*a*/
+
+a:link {
+  color: #000;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+a:active {
+  color: #000;
+  text-decoration: none;
+}
+
+a[x-apple-data-detectors] {
+  color: inherit !important;
+  text-decoration: none !important;
+  font-size: inherit !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+
+}
+
+
+:after, :before {
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+
+}
+
+
+input {
+  -webkit-appearance: none;
+
+}
+
+input::-ms-clear,
+input::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration {
+  display: none;
+}
+
+

@@ -19,6 +19,9 @@ const Home = () => {
       <p>
         <Link to={`/test/aa`}>TestApp2</Link>
       </p>
+      <p>
+        <Link to={`/guide`}>guide</Link>
+      </p>
     </div>
   );
 };

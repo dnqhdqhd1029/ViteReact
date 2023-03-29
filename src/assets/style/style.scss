@@ -1,0 +1,11 @@
+@import "font";
+@import "reset";
+@import "utilities";
+@import "form";
+@import "common";
+
+body{
+  font-size: $fontMd;
+  font-weight: $font400;
+  font-family: 'Noto Sans', sans-serif;
+}
