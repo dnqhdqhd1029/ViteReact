@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { observer } from 'mobx-react';
-import { useStore } from '@/provider/StoreProvider';
+import globalStore from '@/stores/GlobalStore';
 
 const Home = () => {
-  const { globalStore } = useStore();
   return (
     <div>
       <h1>Home</h1>

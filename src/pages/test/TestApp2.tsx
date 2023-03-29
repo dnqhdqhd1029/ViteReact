@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import { observer } from 'mobx-react';
+import globalStore from '@/stores/GlobalStore';
 import testStore from '@/pages/test/TestStore';
 import testStore2, { useTestStore2 } from '@/pages/test/TestStore2';
-import { useStore } from '@/provider/StoreProvider';
+
 
 const TestApp2 = () => {
   /*const { testStore2 } = useTestStore2();*/
-  const { globalStore } = useStore();
 
   return (
     <div className="header1">
