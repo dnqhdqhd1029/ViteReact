@@ -63,11 +63,11 @@ $ touch .prettierrc.js
 ```bash
 # eslint 설정
 $ yarn add eslint -D
-$ touch .eslintrc.js
+$ touch .eslintrc.js.bak
 ```
 
 ```javascript
-// .eslintrc.js
+// .eslintrc.js.bak
 {
   "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
   "parser": "@typescript-eslint/parser",
