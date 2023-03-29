@@ -69,18 +69,18 @@ const Guide = () => {
 
     <GuideContainer>
 
-      <div className="guide-container pxy-10">
-        <h2><a target="_blank" href="https://hwik.atlassian.net/wiki/spaces/AIO/pages/edit-v2/2287960068">디자인가이드 바로가기</a> </h2>
-        <h2><a target="_blank" href="https://www.figma.com/file/DhhrbdUtd8OPIVOBRVZKAO/%5BINT%5D-phase2_passengerAPP_design?node-id=32%3A2&t=mkRjvGlB78oSltjV-1">피그마 바로가기</a> </h2>
+      <div className='guide-container pxy-10'>
+        <h2><a target='_blank' href='https://hwik.atlassian.net/wiki/spaces/AIO/pages/edit-v2/2287960068'>디자인가이드 바로가기</a></h2>
+        <h2><a target='_blank' href='https://www.figma.com/file/DhhrbdUtd8OPIVOBRVZKAO/%5BINT%5D-phase2_passengerAPP_design?node-id=32%3A2&t=mkRjvGlB78oSltjV-1'>피그마 바로가기</a></h2>
 
         <h2>css 파일관리</h2>
-        <ul className="scss-guide">
-          <li><span>style.scss </span>  프로젝트 관련 scss
+        <ul className='scss-guide'>
+          <li><span>style.scss </span> 프로젝트 관련 scss
             <ul>
-              <li><span>font.scss</span>    폰트관련</li>
-              <li><span>reset.scss</span>  모든태그 기본으로 </li>
-              <li><span>utilities.scss</span> 프로젝트별  SIZE / COLOR 설정</li>
-              <li><span>form.scss</span> input,checkbox ,radio,botton 등 기본설정 </li>
+              <li><span>font.scss</span> 폰트관련</li>
+              <li><span>reset.scss</span> 모든태그 기본으로</li>
+              <li><span>utilities.scss</span> 프로젝트별 SIZE / COLOR 설정</li>
+              <li><span>form.scss</span> input,checkbox ,radio,botton 등 기본설정</li>
               <li><span>common.scss</span> 자주쓰는 css 모음</li>
             </ul>
           </li>
@@ -89,17 +89,16 @@ const Guide = () => {
           </li>
         </ul>
 
-        <hr/>
-
+        <hr />
 
 
         <h2>icon</h2>
-        <i className="ic xxl" />
-        <i className="ic xl" />
-        <i className="ic lg" />
-        <i className="ic md" />
-        <i className="ic sm" />
-        <i className="ic xs" />
+        <i className='ic xxl' />
+        <i className='ic xl' />
+        <i className='ic lg' />
+        <i className='ic md' />
+        <i className='ic sm' />
+        <i className='ic xs' />
 
         <pre>{'<i className="ic xxl" />\n' +
           '        <i className="ic xl" />\n' +
@@ -110,9 +109,9 @@ const Guide = () => {
 
         <h2>checkbox</h2>
         <div>
-          <label><input type="checkbox" /> <span>off</span></label>
-          <label><input type="checkbox" checked /> <span>on</span></label>
-          <label><input type="checkbox" disabled /> <span>disabled</span></label>
+          <label><input type='checkbox' /> <span>off</span></label>
+          <label><input type='checkbox' checked /> <span>on</span></label>
+          <label><input type='checkbox' disabled /> <span>disabled</span></label>
         </div>
 
 
@@ -124,9 +123,9 @@ const Guide = () => {
         <h2>radio</h2>
         <div>
 
-          <label><input name="radio" type="radio" /> <span>off</span></label>
-          <label><input name="radio" type="radio" checked /> <span>on</span></label>
-          <label><input type="radio" disabled /> <span>disabled</span></label>
+          <label><input name='radio' type='radio' /> <span>off</span></label>
+          <label><input name='radio' type='radio' checked /> <span>on</span></label>
+          <label><input type='radio' disabled /> <span>disabled</span></label>
         </div>
 
         <pre>
@@ -137,13 +136,13 @@ const Guide = () => {
 
         <h2>.toggle-switch</h2>
         <div>
-          <label className="toggle-switch">
-            <input role="switch" type="checkbox"  />
+          <label className='toggle-switch'>
+            <input role='switch' type='checkbox' />
             <span>알람</span>
           </label>
 
-          <label className="toggle-switch">
-            <input role="switch" type="checkbox" disabled />
+          <label className='toggle-switch'>
+            <input role='switch' type='checkbox' disabled />
             <span>알람 (비활성화)</span>
           </label>
         </div>
@@ -163,40 +162,40 @@ const Guide = () => {
         <h2>.grade-content</h2>
         <div>
 
-         dfdfd
+          dfdfd
         </div>
 
         <pre>{''}</pre>
         <pre>{''}</pre>
         <h2>type="text"</h2>
         <div>
-          <input type="text" placeholder="이름을 입력하세요" />
+          <input type='text' placeholder='이름을 입력하세요' />
         </div>
         <pre>
                     {'<input type=\'text\' placeholder=\'이름을 입력하세요\' />'}
                 </pre>
         <div>
-          <input type="password" className="focus" placeholder="비밀번호를 입력하세요" />
+          <input type='password' className='focus' placeholder='비밀번호를 입력하세요' />
         </div>
         <pre>
                     {'<input type=\'password\' className=\'focus\' placeholder=\'비밀번호를 입력하세요\' />'}
                 </pre>
         <div>
-          <input type="password" className="error" placeholder="비밀번호를 입력하세요" />
-          <small className="text-danger">error message</small>
+          <input type='password' className='error' placeholder='비밀번호를 입력하세요' />
+          <small className='text-danger'>error message</small>
         </div>
         <pre>{'<input type=\'password\' className=\'error\' placeholder=\'비밀번호를 입력하세요\' />\n' +
           '                    <small className=\'text-danger\'>error message</small>'}</pre>
         <div>
-          <input type="password" placeholder="비밀번호를 입력하세요" disabled />
+          <input type='password' placeholder='비밀번호를 입력하세요' disabled />
         </div>
         <pre>
                     {'<input type=\'password\' placeholder=\'비밀번호를 입력하세요\' disabled />'}
                 </pre>
         <div>
-          <input type="tel" className="inline" placeholder="010" /> &nbsp;
-          <input type="tel" className="inline" placeholder="010" /> &nbsp;
-          <input type="tel" className="inline" placeholder="010" />
+          <input type='tel' className='inline' placeholder='010' /> &nbsp;
+          <input type='tel' className='inline' placeholder='010' /> &nbsp;
+          <input type='tel' className='inline' placeholder='010' />
         </div>
         <pre>
                     {'<input type=\'tel\' className=\'inline\' placeholder=\'010\' />\n' +
@@ -207,26 +206,36 @@ const Guide = () => {
 
         <h2>layout</h2>
 
-        <div className="flex-j">
-          <div className=""><input type="text" placeholder="내용을 입력하세요" /> </div>
-          <div><button className="btn md bg-primary radius">등록</button></div>
+        <div className='flex-j'>
+          <div className=''><input type='text' placeholder='내용을 입력하세요' /></div>
+          <div>
+            <button className='btn md bg-primary radius'>등록</button>
+          </div>
         </div>
 
-        <div className="flex-s">
-          <div><input type="text" placeholder="내용을 입력하세요" /> </div>
-          <div><button className="btn md bg-primary radius">등록</button></div>
+        <div className='flex-s'>
+          <div><input type='text' placeholder='내용을 입력하세요' /></div>
+          <div>
+            <button className='btn md bg-primary radius'>등록</button>
+          </div>
         </div>
-        <div className="flex-c">
-          <div><input type="text" placeholder="내용을 입력하세요" /> </div>
-          <div><button className="btn md bg-primary radius">등록</button></div>
+        <div className='flex-c'>
+          <div><input type='text' placeholder='내용을 입력하세요' /></div>
+          <div>
+            <button className='btn md bg-primary radius'>등록</button>
+          </div>
         </div>
-        <div className="flex-e">
-          <div><input type="text" placeholder="내용을 입력하세요" /> </div>
-          <div><button className="btn md bg-primary radius">등록</button></div>
+        <div className='flex-e'>
+          <div><input type='text' placeholder='내용을 입력하세요' /></div>
+          <div>
+            <button className='btn md bg-primary radius'>등록</button>
+          </div>
         </div>
-        <div className="flex-j">
-          <div className="flex"><input type="text" placeholder="내용을 입력하세요" /> </div>
-          <div><button className="btn md bg-primary radius">등록</button></div>
+        <div className='flex-j'>
+          <div className='flex'><input type='text' placeholder='내용을 입력하세요' /></div>
+          <div>
+            <button className='btn md bg-primary radius'>등록</button>
+          </div>
         </div>
 
         <pre>
@@ -264,7 +273,7 @@ const Guide = () => {
                 </pre>
 
         <h2>.select-content select</h2>
-        <div className="select-content ">
+        <div className="select-content">
           <select>
             <option>선택하세요</option>
             <option>선택하세요</option>
@@ -273,7 +282,7 @@ const Guide = () => {
           </select>
         </div>
         <h2>.pull</h2>
-        <div className="select-content pull">
+        <div className='select-content pull'>
           <select>
             <option>선택하세요</option>
             <option>선택하세요</option>
@@ -304,12 +313,12 @@ const Guide = () => {
 
         <h2>color</h2>
         <div>
-          <button className="btn xl bg-primary "> primary</button>
-          <button className="btn lg bg-success "> success</button>
-          <button className="btn md bg-warning"> warning</button>
-          <button className="btn sm bg-danger"> danger</button>
-          <button className="btn xs bg-dark"> dark</button>
-          <button className="btn xs bg-info"> info</button>
+          <button className='btn xl bg-primary '> primary</button>
+          <button className='btn lg bg-success '> success</button>
+          <button className='btn md bg-warning'> warning</button>
+          <button className='btn sm bg-danger'> danger</button>
+          <button className='btn xs bg-dark'> dark</button>
+          <button className='btn xs bg-info'> info</button>
         </div>
         <pre>{'<button className=\'btn xl bg-primary \'> primary</button>\n' +
           '                    <button className=\'btn lg bg-success \'> success</button>\n' +
@@ -319,12 +328,12 @@ const Guide = () => {
           '                    <button className=\'btn xs bg-info\'> info</button>'}</pre>
 
         <div>
-          <span className="text-primary "> primary</span> &nbsp;
-          <span className="text-success "> success</span> &nbsp;
-          <span className="text-warning"> warning</span> &nbsp;
-          <span className="text-danger"> danger</span> &nbsp;
-          <span className="text-dark"> dark</span> &nbsp;
-          <span className="text-info"> info</span> &nbsp;
+          <span className='text-primary '> primary</span> &nbsp;
+          <span className='text-success '> success</span> &nbsp;
+          <span className='text-warning'> warning</span> &nbsp;
+          <span className='text-danger'> danger</span> &nbsp;
+          <span className='text-dark'> dark</span> &nbsp;
+          <span className='text-info'> info</span> &nbsp;
         </div>
 
         <pre>
@@ -337,14 +346,13 @@ const Guide = () => {
                 </pre>
 
 
-
         <h2>button</h2>
         <div>
-          <button className="btn xl bg-primary "> btn xl</button>
-          <button className="btn lg bg-success "> btn lg</button>
-          <button className="btn md bg-warning"> btn md</button>
-          <button className="btn sm bg-danger"> btn sm</button>
-          <button className="btn xs bg-dark"> btn sm</button>
+          <button className='btn xl bg-primary '> btn xl</button>
+          <button className='btn lg bg-success '> btn lg</button>
+          <button className='btn md bg-warning'> btn md</button>
+          <button className='btn sm bg-danger'> btn sm</button>
+          <button className='btn xs bg-dark'> btn sm</button>
         </div>
         <pre>{'<button className=\'btn xl bg-primary \'> btn xl</button>\n' +
           '                    <button className=\'btn lg bg-success \'> btn lg</button>\n' +
@@ -354,11 +362,11 @@ const Guide = () => {
 
         <h2>.radius</h2>
         <div>
-          <button className="btn xl bg-primary radius "> btn xl</button>
-          <button className="btn lg bg-success radius "> btn lg</button>
-          <button className="btn md bg-warning radius-half"> btn md</button>
-          <button className="btn sm bg-danger radius-half"> btn sm</button>
-          <button className="btn xs bg-dark radius-half"> btn sm</button>
+          <button className='btn xl bg-primary radius '> btn xl</button>
+          <button className='btn lg bg-success radius '> btn lg</button>
+          <button className='btn md bg-warning radius-half'> btn md</button>
+          <button className='btn sm bg-danger radius-half'> btn sm</button>
+          <button className='btn xs bg-dark radius-half'> btn sm</button>
         </div>
 
         <pre>{'<button className=\'btn xl bg-primary radius \'> btn xl</button>\n' +
@@ -369,34 +377,33 @@ const Guide = () => {
 
         <h2>.btn .pull</h2>
         <div>
-          <button className="btn xl bg-primary pull "> btn xl</button>
+          <button className='btn xl bg-primary pull '> btn xl</button>
         </div>
 
         <pre>{'<button className=\'btn xl bg-primary pull \'> btn xl</button>'}</pre>
         <div>
-          <button className="btn lg bg-success pull radius-half "> lg</button>
+          <button className='btn lg bg-success pull radius-half '> lg</button>
         </div>
         <pre>{'<button className=\'btn lg bg-success pull radius-half \'> lg</button>'}</pre>
 
         <div>
-          <button className="btn md bg-warning pull radius">btn md</button>
+          <button className='btn md bg-warning pull radius'>btn md</button>
         </div>
         <pre>{'<button className=\'btn md bg-warning pull radius\'>btn md</button>'}</pre>
         <div>
-          <button className="btn sm bg-danger pull"> sm</button>
+          <button className='btn sm bg-danger pull'> sm</button>
         </div>
         <pre>{'<button className=\'btn sm bg-danger pull\'> btn sm</button>'}</pre>
         <div>
-          <button className="btn xs bg-dark pull"> btn sm</button>
+          <button className='btn xs bg-dark pull'> btn sm</button>
         </div>
         <pre>
                     {'<button className=\'btn xs bg-dark fixed\'> btn sm</button>'}
                 </pre>
 
         <div>
-          <button className="btn xl bg-primary fixed "> btn xl</button>
+          <button className='btn xl bg-primary fixed '> btn xl</button>
         </div>
-
 
 
       </div>
