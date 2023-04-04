@@ -1,10 +1,11 @@
-import { defineConfig } from 'vite';
+import {defineConfig} from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import eslintPlugin from 'vite-plugin-eslint';
 import tsconfigPaths from 'vite-tsconfig-paths';
-import { viteStaticCopy } from 'vite-plugin-static-copy';
+import {viteStaticCopy} from 'vite-plugin-static-copy';
 
 // https://vitejs.dev/config/
+// @ts-ignore
 export default defineConfig({
   plugins: [
     react(),
@@ -29,5 +30,16 @@ export default defineConfig({
     rollupOptions: {
       treeshake: false,
     },
+    sourcemap: true
   },
+  server: {
+    // @ts-ignore
+    sourcemap: true
+  },
+  resolve: {
+    alias: {
+      '@': '/src',
+      '@/assets': '/src/assets'
+    },
+  }
 });

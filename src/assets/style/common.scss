@@ -1,3 +1,197 @@
+@import "utilities";
+
+/*font*/
+@each $size, $value in $font-size {
+  .font-#{$size} {
+    font-size: $value;
+  }
+}
+
+
+/*color*/
+@each $color, $value in $theme-colors {
+  .bg-#{$color} {
+    background-color: $value;
+    color: $white;
+
+  }
+
+  .text-#{$color} {
+    color: $value;
+
+  }
+}
+
+/*btn*/
+.btn {
+  box-sizing: border-box;
+  @include fc;
+  height: $heightMd;
+  display: inline-flex;
+  padding: 0 10px;
+
+  & ~ & {
+    margin-left: $interval;
+  }
+
+  .ic {
+    margin-right: 3px;
+  }
+
+
+  @each $color, $value in $theme-colors {
+    &.bg-#{$color} {
+      background-color: $value;
+      color: $white;
+
+      &:hover {
+        background-color: darken($value, 10%);
+      }
+    }
+
+
+  }
+
+
+  &.fixed {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+}
+
+.pull {
+  width: 100% !important;
+}
+
+.half {
+  width: 48% !important;
+}
+
+/*height*/
+@each $size, $value in $base-height {
+  .#{$size} {
+    height: $value;
+    font-size: if($size == "xs", 12px, if($size == "md", 12px, 14px));
+    // xs sm = 12px,그 외의 14x 적용
+
+    &.radius-half {
+      border-radius: $radius30;
+    }
+
+    &.radius-circle {
+      width: $value !important;
+      height: $value;
+      border-radius: $radius50;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      // line-height: $value / 3;
+    }
+  }
+}
+
+
+/*border radius*/
+
+.radius {
+  border-radius: $radius;
+}
+
+.radius-half {
+  border-radius: $radius30;
+}
+
+.radius-circle {
+  border-radius: $radius50;
+}
+
+
+/*icon*/
+.ic {
+  @include iconCenter;
+  @include iconMd;
+
+  &.xxl {
+    @include iconXxl;
+  }
+
+  &.xl {
+    @include iconXl;
+  }
+
+  &.lg {
+    @include iconLg;
+  }
+
+  &.md {
+    @include iconMd;
+  }
+
+  &.sm {
+    @include iconSm;
+  }
+
+  &.xs {
+    @include iconXs;
+  }
+}
+
+/*margin padding  간격*/
+
+@for $i from -6 through 6 {
+  .mt-#{$i} {
+    margin-top: $interval * $i !important;
+  }
+}
+
+@for $i from -6 through 6 {
+  .mr-#{$i} {
+    margin-right: $interval * $i !important;
+  }
+}
+
+@for $i from -6 through 6 {
+  .mb-#{$i} {
+    margin-bottom: $interval * $i !important;
+  }
+}
+
+@for $i from -6 through 6 {
+  .ml-#{$i} {
+    margin-left: $interval * $i !important;
+  }
+}
+
+@for $i from -6 through 6 {
+  .mx-#{$i} {
+    margin: $interval * $i 0 !important;
+  }
+}
+
+@for $i from -6 through 6 {
+  .my-#{$i} {
+    margin: 0 $interval * $i !important;
+  }
+}
+
+
+@for $i from -6 through 6 {
+  .mx-#{$i} {
+    padding: $interval * $i 0 !important;
+  }
+}
+
+@for $i from -6 through 6 {
+  .py-#{$i} {
+    padding: 0 $interval * $i !important;
+  }
+}
+
 
 .skip {
   position: absolute;
@@ -15,9 +209,11 @@
   font-size: 0;
   text-indent: -99999px;
 }
+
 .hide {
   display: none !important;
 }
+
 .bg-none {
   background: none;
 }
@@ -34,10 +230,11 @@
   display: inline-block !important;
 }
 
-.flex{
+.flex {
   display: flex;
 }
-.inline-flex{
+
+.inline-flex {
   display: inline-flex;
 }
 
@@ -125,6 +322,7 @@
 }
 
 /*layout align*/
+
 .fl {
   float: left;
 }
@@ -144,207 +342,51 @@
 /*flex*/
 .flex-j {
   @include fj;
+  //양쪽 정렬
 }
 
 .flex-s {
   @include fs;
+  //start 정렬
 }
 
 .flex-c {
   @include fc;
+  //center 정렬
 }
 
 .flex-e {
   @include fe;
+  //right 정렬
+}
+
+.flex-fsc {
+  @include fcs;
+  //Y축 꽉찬 정렬
+}
+
+.flex-column {
+  flex-direction: column;
+  //y축 정렬
 }
 
 .align-s {
   align-items: start !important;
+  //y축 상단 정렬
 }
 
 .align-c {
   align-items: center !important;
+  //y축 중앙 정렬
 }
 
 .align-e {
   align-items: end !important;
-}
-
-.flex-column{
-  flex-direction: column;
+  //y축 하단 정렬
 }
 
 
 .flex {
   flex: 1 1 auto;
 }
-
-
-
-/*btn*/
-.btn{
-  box-sizing: border-box;
-  @include fc;
-  height: $heightMd;
-  display: inline-flex;
-  margin: 0 5px;
-  padding: 0 10px;
-
-  &.xl{
-    height: $heightXl;
-
-    &.radius-half{
-      border-radius: $radius30;
-    }
-  }
-  &.lg{
-    height: $heightLg;
-    &.radius-half{
-      border-radius: $radius30;
-    }
-  }
-  &.md{
-    height: $heightMd;
-    &.radius-half{
-      border-radius: $radius30;
-    }
-  }
-  &.sm{
-    height: $heightSm;
-    &.radius-half{
-      border-radius: $radius30;
-    }
-  }
-  &.xs{
-    height: $heightXs;
-    &.radius-half{
-      border-radius: $radius30;
-    }
-  }
-
-  &.fixed{
-    position: fixed;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-    margin: 0;
-  }
-}
-.pull{
-  width: 100% !important;
-}
-
-.half{
-  width: 48% !important;
-}
-
-
-/*border radius*/
-
-.radius {
-  border-radius: $radius;
-}
-
-.radius-circles{
-  border-radius: $radius50;
-}
-
-/*bg*/
-.bg-primary {
-  background-color:$primary ;
-  color: $white;
-}
-.bg-success {
-  background-color:$success ;
-  color: $white;
-}
-.bg-warning {
-  background-color:$warning ;
-  color: $white;
-}
-.bg-danger {
-  background-color:$danger ;
-  color: $white;
-}
-.bg-dark {
-  background-color:$dark ;
-  color: $white;
-}
-.bg-info {
-  background-color:$info ;
-}
-
-/* text */
-.text-primary {
-  color:$primary !important;
-
-}
-.text-success {
-  color:$success !important;;
-}
-.text-warning {
-  color:$warning !important;;
-}
-.text-danger {
-  color:$danger !important;;
-}
-.text-dark {
-  color:$dark !important;;
-
-}
-.text-info {
-  color:$info !important;
-}
-
-.text-darkBlack{
-  color:$darkBlack !important;
-}
-
-.text-black{
-  color:$black !important;
-}
-
-.text-gray{
-  color:$gray !important;
-}
-
-.text-lightGray{
-  color:$lightGray !important;
-}
-
-.text-light{
-  color:$light !important;
-}
-
-.text-white{
-  color:$white !important;
-}
-
-
-/*icon*/
-.ic{
-  @include iconCenter;
-  @include iconMd;
-
-  &.xxl{
-    @include iconXxl;
-  }
-  &.xl{
-    @include iconXl;
-  }
-  &.lg{
-    @include iconLg;
-  }
-  &.md{
-    @include iconMd;
-  }
-  &.sm{
-    @include iconSm;
-  }
-  &.xs{
-    @include iconXs;
-  }
-}
-
-
 

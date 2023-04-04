@@ -45,6 +45,10 @@ const routes = (): MapRouterProps[] => [
     path: '*',
     element: <NotFound />,
   },
+  {
+    path: '/guide',
+    element: <Guide />,
+  }
 ];
 
 const mapRoutes = (routes: any): MapRouterProps[] => {
