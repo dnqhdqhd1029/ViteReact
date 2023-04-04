@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react';
-import {observer} from 'mobx-react';
+import React, { useEffect } from 'react';
+import { observer } from 'mobx-react';
+import globalStore from '@/stores/GlobalStore';
 import testStore from '@/pages/test/TestStore';
-import {useStore} from '@/provider/StoreProvider';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Header from '@/components/wrappers/Header';
 
 const TestApp = () => {
@@ -18,7 +18,7 @@ const TestApp = () => {
   }, []);
   return (
     <div className="header1">
-      <Header/>
+      <Header />
       <button
         onClick={() => {
           navigate(-1);

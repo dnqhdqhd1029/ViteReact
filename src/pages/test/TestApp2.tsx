@@ -1,18 +1,15 @@
-import React, {useContext} from 'react';
-import {observer} from 'mobx-react';
+import React, { useContext } from 'react';
+import { observer } from 'mobx-react';
+import globalStore from '@/stores/GlobalStore';
 import testStore from '@/pages/test/TestStore';
-import testStore2, {useTestStore2} from '@/pages/test/TestStore2';
-import {useStore} from '@/provider/StoreProvider';
+import testStore2, { useTestStore2 } from '@/pages/test/TestStore2';
 
 
 const TestApp2 = () => {
-  // /*const { testStore2 } = useTestStore2();*/
-  const {globalStore} = useStore();
-
+  /*const { testStore2 } = useTestStore2();*/
 
   return (
-
-    <div className="header">
+    <div className="header1">
       {import.meta.env.MODE}
       <h1>Count2: {testStore2.count}</h1>
       <button onClick={testStore2.increment}>+</button>
