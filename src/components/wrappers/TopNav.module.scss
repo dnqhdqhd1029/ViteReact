@@ -1,0 +1,60 @@
+@import "../../assets/style/utilities.scss";
+
+.container {
+  @include fj;
+  width: 100%;
+  height: 56px;
+  padding: 0 16px;
+  background: $white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 101;
+
+  button {
+    @include iconMd;
+    font-size: 0;
+
+    i {
+      @include iconMd;
+    }
+
+
+    .icPrev {
+      background: url("@/assets/images/svg/icon-arrow-prev.svg");
+
+    }
+
+    .icNext {
+      background: url("@/assets/images/svg/icon-arrow-next.svg");
+    }
+
+    .icClose {
+      background: url("@/assets/images/svg/icon-close.svg");
+    }
+
+    .icMenu {
+      background: url("@/assets/images/svg/icon-menu.svg");
+    }
+
+    .icDownload {
+      background: url("@/assets/images/svg/icon-download.svg");
+    }
+  }
+
+  h2 {
+    @include fs;
+    margin-left: 12px;
+    flex: 1;
+    font-weight: 500;
+    font-size: $fontXl;
+    color: $black;
+
+    @include mobileXs {
+      font-size: $fontLg;
+    }
+    @include ellipsis;
+
+  }
+
+}

@@ -1,4 +1,4 @@
-import { makeObservable, observable, action } from 'mobx';
+import {makeObservable, observable, action} from 'mobx';
 
 class GlobalStore {
   isLoading = false;
@@ -27,4 +27,5 @@ class GlobalStore {
   };
 }
 
-export default new GlobalStore();
+const globalStore = new GlobalStore();
+export default globalStore;

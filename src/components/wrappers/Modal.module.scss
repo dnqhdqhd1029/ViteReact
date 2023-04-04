@@ -1,0 +1,84 @@
+@import "../../assets/style/utilities.scss";
+
+.container {
+  @include fc;
+
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 101;
+  width: 100%;
+  height: 100vh;
+
+  &:before {
+    content: '';
+  }
+
+  .wrap {
+    background-color: $white;
+    border-radius: 16px;
+    width: 328px;
+    min-height: 208px;
+    @include fcs;
+
+    @include mobileXs {
+      width: 90%;
+    }
+
+
+    .content {
+      font-size: $fontSm;
+      padding: 16px 32px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+
+
+      strong {
+        font-size: $fontLg;
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      div {
+        flex: 1;
+      }
+
+    }
+
+
+  }
+
+  .btnWrap {
+    height: 56px;
+    @include fj;
+    border-top: 1px solid $light;
+
+    button {
+      flex: 1;
+    }
+
+
+    button {
+      border-left: 1px solid $light;
+      height: 100%;
+    }
+
+    button:first-child {
+      border-left: 0;
+    }
+
+    button.textPrimary {
+      font-weight: 700;
+    }
+
+    button:last-child {
+      font-weight: 700;
+    }
+
+
+  }
+
+}
