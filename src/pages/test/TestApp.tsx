@@ -1,13 +1,11 @@
-import React, { useEffect } from 'react';
-import { observer } from 'mobx-react';
-import globalStore from '@/stores/GlobalStore';
+import React, {useEffect} from 'react';
+import {observer} from 'mobx-react';
 import testStore from '@/pages/test/TestStore';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import Header from '@/components/wrappers/Header';
 
 const TestApp = () => {
   const navigate = useNavigate();
-  const {globalStore} = useStore();
 
   useEffect(() => {
     console.log('mounted');
@@ -18,7 +16,7 @@ const TestApp = () => {
   }, []);
   return (
     <div className="header1">
-      <Header />
+      <Header/>
       <button
         onClick={() => {
           navigate(-1);
@@ -63,8 +61,6 @@ const TestApp = () => {
       >
         deleteTest
       </button>
-      <button onClick={() => globalStore.setIsLoading(true)}>{`${globalStore.isLoading}`}</button>
-      <button onClick={() => globalStore.setIsLoading(false)}>{`${globalStore.isLoading}`}</button>
       <div>
         JSON: <pre>{JSON.stringify(testStore.json, null, 2)}</pre>
       </div>
